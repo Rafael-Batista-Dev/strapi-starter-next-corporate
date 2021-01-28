@@ -22,13 +22,17 @@ const LeadForm = ({ data }) => {
 
   return (
     <div className="py-10 text-center">
-      <h1 className="text-3xl font-bold">{data.title}</h1>
-      <input
-        type="email"
-        value={email}
-        onChange={e => setEmail(e.target.value)}
-      />
-      <Button button={data.submitButton} handleClick={handleClick} />
+      <h1 className="text-3xl mb-10 font-bold mb-2">{data.title}</h1>
+      <div className="container flex flex-row justify-center flex-wrap gap-4">
+        <input
+          className="text-base focus:outline-none px-4 border-2 rounded-md"
+          type="email"
+          placeholder={data.emailPlaceholder}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <Button button={data.submitButton} handleClick={handleClick} />
+      </div>
     </div>
   );
 };
